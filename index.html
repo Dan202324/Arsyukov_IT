@@ -554,6 +554,137 @@
                 font-size: 2rem;
             }
         }
+/* Pricing Section */
+.pricing {
+    background-color: white;
+}
+
+.pricing-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    border: 2px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
+
+.pricing-card-featured {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.05);
+}
+
+.pricing-card-featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 0.4rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.pricing-header h3 {
+    font-size: 1.8rem;
+    color: var(--dark-color);
+}
+
+.pricing-price {
+    margin: 1rem 0;
+}
+
+.price {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.period {
+    color: var(--gray-color);
+    font-size: 1rem;
+}
+
+.pricing-subtitle {
+    color: var(--gray-color);
+    font-size: 1rem;
+}
+
+.pricing-features {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pricing-features li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.pricing-features i {
+    margin-right: 0.8rem;
+    margin-top: 0.2rem;
+    color: var(--success-color);
+    font-size: 0.9rem;
+}
+
+.pricing-features i.fa-times {
+    color: #ef4444;
+}
+
+/* Responsive for pricing */
+@media (max-width: 768px) {
+    .pricing-card-featured {
+        transform: scale(1);
+    }
+    
+    .pricing-card-featured:hover {
+        transform: translateY(-10px);
+    }
+    
+    .pricing-container {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    
+    .price {
+        font-size: 2.5rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -810,7 +941,71 @@ else:
             </div>
         </div>
     </section>
+<!-- Добавьте этот блок после раздела "Работа с кодом" и перед разделом "Контакты" -->
 
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Цены на услуги</h2>
+            <p style="text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; color: var(--gray-color); font-size: 1.1rem;">
+                Прозрачное ценообразование на основные услуги. Все цены указаны за базовый проект.
+            </p>
+            
+            <div class="pricing-container">
+                <div class="pricing-card animate-on-scroll">
+                    <div class="pricing-header">
+                        <h3>СТАНДАРТ!</h3>
+                        <div class="pricing-price">
+                            <span class="price">от 5 000 ₽</span>
+                            <span class="period">/ проект</span>
+                        </div>
+                        <p class="pricing-subtitle">Одностраничный сайт (Landing Page)</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Адаптивный дизайн</li>
+                            <li><i class="fas fa-check"></i> Современная верстка на HTML/CSS</li>
+                            <li><i class="fas fa-check"></i> Базовая JavaScript анимация</li>
+                            <li><i class="fas fa-check"></i> Оптимизация для мобильных устройств</li>
+                            <li><i class="fas fa-check"></i> Контактная форма</li>
+                            <li><i class="fas fa-check"></i> Базовая SEO-оптимизация</li>
+                            <li><i class="fas fa-check"></i> Тестирование в основных браузерах</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn" style="width: 100%; text-align: center; margin-top: 1.5rem;">Заказать</a>
+                </div>
+                
+                <div class="pricing-card pricing-card-featured animate-on-scroll">
+                    <div class="pricing-header">
+                        <h3>Макет Figma</h3>
+                        <div class="pricing-price">
+                            <span class="price">от 3 000 ₽</span>
+                            <span class="period">/ макет</span>
+                        </div>
+                        <p class="pricing-subtitle">Профессиональный дизайн-макет</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Современный UI/UX дизайн</li>
+                            <li><i class="fas fa-check"></i> Полный набор экранов</li>
+                            <li><i class="fas fa-check"></i> Адаптивный макет (десктоп + мобильный)</li>
+                            <li><i class="fas fa-check"></i> Компонентная система</li>
+                            <li><i class="fas fa-check"></i> Интерактивный прототип</li>
+                            <li><i class="fas fa-check"></i> Руководство по стилю (Style Guide)</li>
+                            <li><i class="fas fa-check"></i> Иконки и элементы интерфейса</li>
+                            <li><i class="fas fa-check"></i> Подготовка к передаче разработчику</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn" style="width: 100%; text-align: center; margin-top: 1.5rem; background: linear-gradient(to right, var(--secondary-color), #9d4edd);">Заказать</a>
+                </div>
+            </div>
+            
+            <div class="pricing-note animate-on-scroll" style="text-align: center; margin-top: 3rem; padding: 1.5rem; background-color: #f8fafc; border-radius: 10px; border-left: 4px solid var(--primary-color);">
+                <p style="margin-bottom: 0.5rem; font-weight: 500;"><i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Индивидуальные проекты</p>
+                <p style="color: var(--gray-color); font-size: 0.95rem;">Стоимость сложных проектов (многостраничные сайты, интернет-магазины, веб-приложения) рассчитывается индивидуально после обсуждения требований.</p>
+            </div>
+        </div>
+    </section>
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
